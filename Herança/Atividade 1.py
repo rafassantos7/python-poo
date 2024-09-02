@@ -10,6 +10,7 @@ class Endereco():
         self.cidade = cidade
 
     def __str__(self) -> str:
+        return f"Rua: {self.logradouro}\nNumero: {self.numero}\nComplemento: {self.complemento}\nCep: {self.cep}\nCidade: {self.cidade}"
         
 
         
@@ -36,6 +37,9 @@ class Engenheiro(Funcionario):
     def salario_final() -> float:
         pass
 
+    def __str__(self) -> str:
+        return f"{super().__str__()}\nCrea: {self.crea}"
+
 
 class Medico(Funcionario):
     def __init__(self, nome: str, tel: str, email: str, endereco: Endereco, crm: str) -> None:
@@ -46,4 +50,6 @@ class Medico(Funcionario):
         pass
 
 
-eng1 = Engenheiro("Rafael","40028922","seila231@gmail.com",Endereco("Rua dos pulinhos","144","Proximo a rua dos capengas","2036547","Salvador"))
+eng1 = Engenheiro("Rafael","40028922","seila231@gmail.com",Endereco("Rua dos pulinhos","144","Proximo a rua dos capengas","2036547","Salvador"),"n sei o que é crea")
+
+print(eng1)
