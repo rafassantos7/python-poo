@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 import os
 
+os.system("clear")
+
 class Endereco():
     def __init__(self, logradouro: str, numero: str, complemento: str, cep: str, cidade: str) -> None:
         self.logradouro = logradouro
@@ -10,7 +12,7 @@ class Endereco():
         self.cidade = cidade
 
     def __str__(self) -> str:
-        return f"Rua: {self.logradouro}\nNumero: {self.numero}\nComplemento: {self.complemento}\nCep: {self.cep}\nCidade: {self.cidade}"
+        return f"\n\n{self.logradouro}\nNumero: {self.numero}\nComplemento: {self.complemento}\nCep: {self.cep}\nCidade: {self.cidade}"
         
 
         
@@ -49,6 +51,8 @@ class Medico(Funcionario):
     def salario_final() -> float:
         pass
 
+    def __str__(self) -> str:
+        return f"{super().__str__()}"
 
 eng1 = Engenheiro("Rafael","40028922","seila231@gmail.com",Endereco("Rua dos pulinhos","144","Proximo a rua dos capengas","2036547","Salvador"),"n sei o que é crea")
 
