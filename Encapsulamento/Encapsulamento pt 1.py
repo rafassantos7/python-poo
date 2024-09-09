@@ -14,7 +14,7 @@ class Conta:
     def __init__(self, numero_conta: int, agencia: int ) -> None:
         self.numero_conta = numero_conta
         self.agencia = agencia
-        self._saldo = 0 #Atributo protegido. Não usar no print.
+        self._saldo = 0 #Atributo protegido (1 "_"). Não usar no print.
 
     @property #Pode chamar no print sem usar os (parenteses).
     def saldo(self):
@@ -32,7 +32,7 @@ class Conta:
         self._saldo -= valor
         return self._saldo
     
-    def __verificar_sacar(self, valor): # Metodo privado.
+    def __verificar_sacar(self, valor): # Metodo privado (2 "__").
         if valor > self._saldo:
             raise SaldoInsuficienteError("Saldo insuficiente.") # Lançando um erro
         
